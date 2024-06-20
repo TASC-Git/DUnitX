@@ -232,7 +232,9 @@ type
     procedure LoadTests;
     procedure BuildTestTreeNode(const FixtureList: ITestFixtureList;
       const ParentNode: TTreeNode);
-    procedure ClearResults;
+  public
+    procedure ClearResults; // DQ changed - if a test changes theme the Tree Rootnode data is lost
+  private
     procedure RunExecute;
     procedure Invert;
     procedure SelectAll;
