@@ -35,7 +35,7 @@ uses
   System.Actions, FMX.ActnList, FMX.Layouts, FMX.TreeView, FMX.Edit,
   DUnitX.TestFramework, DUnitX.Extensibility, DUnitX.InternalInterfaces, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView, FMX.ListBox, System.Generics.Collections, FMX.Memo, FMX.ScrollBox, FMX.Controls.Presentation, System.IniFiles,
-  FMX.ListView.Adapters.Base;
+  FMX.ListView.Adapters.Base, FMX.Memo.Types;
 
 {$HPPEMIT '#if defined(USEPACKAGES)'}
 {$HPPEMIT '# pragma comment(lib, "Fmx.bpi")'}
@@ -78,7 +78,6 @@ type
     Label6: TLabel;
     FailTestMessage: TMemo;
     Label8: TLabel;
-    SelectFailedButton: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure RunExecute(Sender: TObject);
