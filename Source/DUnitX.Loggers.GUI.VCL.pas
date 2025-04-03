@@ -589,9 +589,9 @@ end;
 
 procedure TGUIVCLTestRunner.FormClose(Sender: TObject; var Action: TCloseAction);
 var
-  IniFile: TIniFile;
+  IniFile: TMemIniFile;
 begin
-  IniFile := TIniFile.Create(ChangeFileExt(ParamStr(0), '.ini'));
+  IniFile := TMemIniFile.Create(ChangeFileExt(ParamStr(0), '.ini'));
   try
     tvwTests.IterateAll(
       procedure(const Node: TTreeNode; var Stop: boolean)
@@ -600,6 +600,7 @@ begin
         IniFile.WriteBool(cTestSetup, Node.Text, Node.StateIndex = cTestNodeStateChecked);
       end
     );
+    IniFile.UpdateFile;
   finally
     IniFile.Free;
   end;
